@@ -1,0 +1,39 @@
+@use'base/variables' as v;
+@use'base/mixins' as m;
+
+.busqueda{
+    padding: 5rem 0;
+    text-align: center;
+    background-color: v.$grisClaro;
+
+    &__heading{
+        margin: 0;
+        color: v.$gris;
+    }
+}
+
+.formulario{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+ 
+
+    @include m.tablet { 
+      @include m.grid(4,2rem);
+     }
+
+
+     &__campo{
+        padding: 1rem;
+        border: 1px solid lighten(v.$gris, 50%);
+     }
+
+     &__submit{
+        @include m.boton(v.$primario, v.$blanco);
+        margin-top: 0;
+        padding: 1rem ;
+        border-radius:3px ;
+        cursor: pointer;
+     }
+}
